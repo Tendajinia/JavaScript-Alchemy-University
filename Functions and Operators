@@ -1,0 +1,9 @@
+// Get Message
+function getMessage() {
+    return "Abigirl";
+     
+}
+
+module.exports = getMessage;
+
+//
