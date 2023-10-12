@@ -6,4 +6,24 @@ function getMessage() {
 
 module.exports = getMessage;
 
-//
+//Add Two
+function addTwo(input)  {
+    const output = input + 2;
+
+    return output;
+    
+}
+
+module.exports = addTwo;
+
+//Multiply  Inputs
+function product(a3, a4 ) {
+    return a3*a4 ;
+    
+}
+
+module.exports = product;
+
+
+// Division Operator
+
