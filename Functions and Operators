@@ -66,5 +66,105 @@ function canAccess(purchasedSubscription, freeTrial) {
 module.exports = canAccess;
 
 //Loops
+// Top Double
+function topDouble(value, top) {
+    while(value < top)  {
+         value *= 2;
+        
+        }
+         return value / 2
+}
 
+module.exports = topDouble;
+
+//Even Numbers
+//isEven
+function isEven(num) {
+    return num % 2 === 0;
+    
+}
+
+module.exports = isEven;
+
+//Smaller Number
+function smallerNumber(num1, num2) {
+    if(num1>num2){
+        return num2;
+    }
+    else{
+        return num1;
+    }
+     
+
+}
+
+module.exports = smallerNumber;
+
+//Message interpolation
+//interpolate name
+
+const fakeName = require('./fakeName');
+
+const message = `
+    Hello, ${fakeName}! You left a package at the office today.
+    You can pick up tomorrow at 10am, ${fakeName}. 
+    If not I will drop it off this weekend.
+    Goodbye ${fakeName}!
+`;
+
+module.exports = message;
+
+//Check Number
+function checkNumber(num) {
+    if(num > 0){
+        return "positive";
+    }
+    else if( num < 0){
+        return "negative";
+    }
+    else{
+        return "zero";
+    }
+}
+module.exports = checkNumber;
+
+//Max Sum
+//Total Sum
+
+function maxSum(num){
+    let sum = 0;
+    for(let i= 0; i<=num; i++){
+        sum = sum+i;
+    }
+    return sum;
+
+}
+
+
+module.exports = maxSum;
+
+//String Manipulation
+//Starts with X
+
+function startsWithX(string) {
+    // return string.charAt(0) === "x"; || just the same as below
+    
+    return string[0] ==="x";
+     
+ }
+ 
+ module.exports = startsWithX;
+
+ // Starts with Casing
+ function startsWithX(string) {
+   
+    return string.toLowerCase().startsWith("x")
+     
+ }
+ console.log("x".toLowerCase() === "x");
+ console.log("x".toUpperCase() === "x");
+ 
+ module.exports = startsWithX;
+
+ // Ends with X
 
