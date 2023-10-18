@@ -144,3 +144,76 @@ function maxSum(num){
 module.exports = maxSum;
 
 
+
+ // Starts with Casing
+ function startsWithX(string) {
+   
+    return string.toLowerCase().startsWith("x")
+     
+ }
+ console.log("x".toLowerCase() === "x");
+ console.log("x".toUpperCase() === "x");
+ 
+ module.exports = startsWithX;
+
+ // Ends with X
+ function endsWithX(string) {
+
+    if (string.toLowerCase().endsWith('x') || string.toUpperCase().endsWith('X')) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log("x".toLowerCase()==="x");
+console.log("x".toUpperCase()==="X");
+
+
+module.exports = endsWithX;
+
+
+ //Is All X
+ function isAllX(string) {
+    for(let i=0; i<string.length; i++){
+        if(string[i]!=="x" && string[i]!=="X")
+        return false
+
+    }
+        return true
+}
+console.log(isAllX("Xx")); // true
+console.log(isAllX("xAbX")); // false
+module.exports = isAllX;
+
+// Find first x / indexOf
+function findFirstX(string) {
+    return string.indexOf('x');
+
+}   
+
+module.exports = findFirstX;
+
+//Split at X / Slice Method
+/*
+Let's find the longer half of the string before and after the x!
+
+First, you'll need to find the lower-case x.
+Once you've found the x, split the string in half. The first half will be the string before the x, the second half will be the string after the x.
+Take the longer string and return it!
+*/
+function splitAtX(string) {
+    let xIndex = string.indexOf('x');
+    let firstHalf = string.slice(0, xIndex);
+    let secondHalf = string.slice(xIndex + 1);
+    return firstHalf.length >= secondHalf.length ? firstHalf : secondHalf;   
+  }
+  /*
+  e.gs
+  splitAtX("Happyxdays"); // "Happy"
+  splitAtX("10xDeveloper"); // "Developer"
+  */
+  module.exports = splitAtX;
+
+
+
