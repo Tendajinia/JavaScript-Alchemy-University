@@ -167,4 +167,44 @@ function startsWithX(string) {
  module.exports = startsWithX;
 
  // Ends with X
+ function endsWithX(string) {
+
+    if (string.toLowerCase().endsWith('x') || string.toUpperCase().endsWith('X')) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log("x".toLowerCase()==="x");
+console.log("x".toUpperCase()==="X");
+
+
+module.exports = endsWithX;
+
+
+ //Is All X
+ function isAllX(string) {
+    for(let i=0; i<string.length; i++){
+        if(string[i]!=="x" && string[i]!=="X")
+        return false
+
+    }
+        return true
+}
+console.log(isAllX("Xx")); // true
+console.log(isAllX("xAbX")); // false
+module.exports = isAllX;
+
+// Find first x / indexOf
+function findFirstX(string) {
+    return string.indexOf('x');
+
+}   
+
+module.exports = findFirstX;
+
+//Split at X / Slice
+
+
 
