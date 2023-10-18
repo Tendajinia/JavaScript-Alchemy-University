@@ -101,7 +101,7 @@ function smallerNumber(num1, num2) {
 module.exports = smallerNumber;
 
 //Message interpolation
-//interpolate name
+//Interpolate name
 
 const fakeName = require('./fakeName');
 
@@ -137,9 +137,7 @@ function maxSum(num){
         sum = sum+i;
     }
     return sum;
-
 }
-
 
 module.exports = maxSum;
 
