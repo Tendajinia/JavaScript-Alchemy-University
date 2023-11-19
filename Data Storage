@@ -220,3 +220,81 @@ module.exports = removeOccurrences;
 
 
 
+//Objects
+
+//Create Pizza Order Object
+const order = {
+    pizzas : 4,
+    extraCheese : false,
+    deliveryInstructions: "Deliver whilst hot."
+    
+};
+
+module.exports = order;
+
+//Retrieve values
+function numberOfPizzas(order) {
+    return order.pizzas;
+    };
+
+module.exports = numberOfPizzas;
+
+
+//Array of Objects
+
+/*
+Accumulate the Pizza Orders
+Given an array of pizza orders, return the total number of pizzas ordered.
+
+The orders are an array of objects, each with pizzas key inside:
+
+const orders = [
+    { pizzas: 3 },
+    { pizzas: 5 },
+    { pizzas: 10 }
+];
+
+*/
+function numberOfPizzas(orders) {
+    const totalPizzasOrdered = orders.reduce((total, order) => {
+      return total + order.pizzas;
+    }, 0);
+  
+    return totalPizzasOrdered;
+      
+  }
+  
+  module.exports = numberOfPizzas;
+  /*
+  the reduce method iterates over each element 
+  in the orders array, adding the number
+   of pizzas from each order to the accumulator total.
+   The initial value of total is set to 0. This 
+  will correctly calculate the total number of pizzas ordered.
+  
+  A callback function in JavaScript is a function passed into another 
+  function as an argument. This callback can then be invoked within the outer
+   function to complete some kind of routine or action.
+  
+  In the context of the reduce method you used in your code, the callback 
+  function is particularly important. reduce is a higher-order function that takes 
+  a callback function as its first argument. This callback function is executed on each element in the array.
+  
+  The callback function for reduce takes two main arguments:
+  
+  Accumulator (total in your case): This is the accumulated value returned
+   after the last iteration of the callback function. For the first iteration, 
+   it starts with the value provided as the second argument to reduce. If no
+    initial value is provided, it starts with the first element of the array.
+  
+  Current Value (order in your code): This is the current element being processed in the array.
+  
+  So, in your numberOfPizzas function, the callback function is used to calculate the total
+   number of pizzas. On each iteration, the function adds the number of pizzas from the 
+   current order (order.pizzas) to the total number of pizzas accumulated so far (total). 
+   The process continues until all elements in the 
+  array have been processed, resulting in the final total.
+  
+  */
+
+
