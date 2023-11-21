@@ -297,4 +297,92 @@ function numberOfPizzas(orders) {
   
   */
 
+  //Typed Orders
+  //Enumerated Types
+  const ORDER_TYPES = {
+    PIZZA: 0,
+    BURGER: 2,
+    CHIPS:1
+    
+}
+
+module.exports = ORDER_TYPES;
+
+//Add By Type
+//Importing Files
+
+/*
+Modify the numberOfPizzas function to only count pizzas when the order.type is equal to ORDER_TYPES.PIZZA.
+
+The orders will have a type keyword:
+
+const orders = [
+    { pizzas: 3, type: ORDER_TYPES.PIZZA },
+    { wings: 12, type: ORDER_TYPES.WINGS },
+];                                                                                                           
+        
+
+
+function numberOfPizzas(orders) {
+  const totalPizzas = orders.reduce((total, order) => {
+    return total + order.pizzas;
+  }, 0);
+
+  return totalPizzas;    
+}
+
+module.exports = numberOfPizzas;
+
+
+*/
+
+
+const ORDER_TYPES = require('./orderTypes.js')
+
+function numberOfPizzas(orders) {
+  return orders.reduce((total, order) => {
+  if(order.type === ORDER_TYPES.PIZZA){
+    return total + order.pizzas;
+  }  
+   return total; 
+  }, 0);
+
+  return totalPizzas;
+    
+}
+
+module.exports = numberOfPizzas;
+/*
+the reduce method iterates over each element 
+in the orders array, adding the number
+ of pizzas from each order to the accumulator total.
+ The initial value of total is set to 0. This 
+will correctly calculate the total number of pizzas ordered.
+
+A callback function in JavaScript is a function passed into another function as an argument. This callback can then be invoked within the outer function to complete some kind of routine or action.
+
+In the context of the reduce method you used in your code, the callback function is particularly important. reduce is a higher-order function that takes a callback function as its first argument. This callback function is executed on each element in the array.
+
+The callback function for reduce takes two main arguments:
+
+Accumulator (total in your case): This is the accumulated value returned after the last iteration of the callback function. For the first iteration, it starts with the value provided as the second argument to reduce. If no initial value is provided, it starts with the first element of the array.
+
+Current Value (order in your code): This is the current element being processed in the array.
+
+So, in your numberOfPizzas function, the callback function is used to calculate the total number of pizzas. On each iteration, the function adds the number of pizzas from the current order (order.pizzas) to the total number of pizzas accumulated so far (total). The process continues until all elements in the 
+array have been processed, resulting in the final total.
+
+*/
+
+// Object Keys
+//Given an object, find the number of keys inside
+// the object. Return this number.
+function numberOfKeys(object) {
+  
+    return Object.keys(object).length;   
+   }
+   
+   module.exports = numberOfKeys;
+
+
 
