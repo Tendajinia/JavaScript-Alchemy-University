@@ -386,3 +386,30 @@ function numberOfKeys(object) {
 
 
 
+//Editing Object Value
+/*
+ing values:
+
+const person = {
+    name: "James",
+    age: 22
+}
+
+person.name = "Sally";
+person["age"] = 30;
+
+console.log( person.name ); // Sally
+console.log( person.age ); // 30
+
+*/  
+
+function removeSecret(object) {
+    delete object.secret;
+ 
+ 
+ }
+ 
+ module.exports = removeSecret;
+
+
+
