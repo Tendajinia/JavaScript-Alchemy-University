@@ -1,2 +1,1 @@
-# Alchemy-University
-Course Solutions from Alchemy University
+JavaScript Course Solutions from Alchemy University
