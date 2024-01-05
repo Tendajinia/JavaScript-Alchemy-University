@@ -1,1 +1,19 @@
+This Keyword
+In JavaScript, the this keyword provides a function with context.
 
+A function may act different depending on what this is:
+
+function logout() {
+    if(this.isLoggedIn) {
+        this.removeAuthToken();
+        this.redirectToSignIn();
+    }
+}
+As we'll learn in the Prototype Chain lesson, JavaScript has a powerful tool for creating new objects and linking them to a common function. These functions can be written once and applied to whatever this is.
+
+// an example of a "constructor" function
+// we'll explore this in further detail
+function Person() {
+    this.name = "Steve";
+    this.age = 32;
+}
