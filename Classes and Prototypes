@@ -256,5 +256,43 @@ module.exports = obj;
 
 
 
+//Unbound Function
+/*
 
+Task
+Within the function Celebrity, a method is used to fetch the
+ celebrity's age. The second argument to fetchAge is a 
+ callback function. The callback function will receive age 
+ as an argument.
+
+ Unfortunately, due to the function call-site, this will 
+ be re-defined to not refer to the celebrity. Running the 
+ tests without modifying the code will result in a TypeError.
+
+Fix this.age to refer to the same this as the function 
+Celebrity.
+
+Solution:
+
+The issue in the code arises because the this
+ inside the callback function of fetchAge does not refer to 
+ the Celebrity instance. To fix this, you can use an arrow 
+ function, which does not have its own this context 
+ and instead inherits it from the surrounding code.
+
+Now the arrow function inside fetchAge will correctly
+refer to this as the instance of Celebrity, 
+allowing this.age to be set appropriately.
+*/
+const fetchAge = require('./fetchAge');
+
+function Celebrity(name) {
+    this.name = name;
+
+    fetchAge(this.name,  (age)=> {
+        this.age = age;
+    } );
+}
+
+module.exports = Celebrity;
 
