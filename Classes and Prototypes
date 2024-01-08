@@ -296,3 +296,174 @@ function Celebrity(name) {
 
 module.exports = Celebrity;
 
+
+
+
+//Prototype Chain
+
+//Taking Shape
+
+/*
+Task
+
+The Shape function will take two arguments: x and y. 
+Store these values in an object position on the instance (this).
+
+For reference see this example. The tests will invoke Shape
+with the new keyword, creating an object and setting it to 
+this within the function.
+
+The position should have keys x and y containing the 
+corresponding values:
+
+const shape = new Shape(5, 10);
+
+console.log(shape.position.x) // 5
+console.log(shape.position.y) // 10
+ Notice that position is an object with two keys x and y!
+*/
+
+// Our Shape "Constructor"
+function Shape(x, y) {
+    // store x and y in this.position
+    this.position = {
+        x : x,
+        y : y
+    }
+}
+/*const shape = new Shape(5, 10);
+console.log(shape.position.x); // 5
+console.log(shape.position.y); // 10*/
+
+/*
+Task
+Create a function move that will be added to the
+ Shape.prototype. This function should take two 
+ arguments: x and y.
+
+It should move the shape's position by adding the corresponding
+arguments value:
+
+const shape = new Shape(1, 1);
+
+shape.move(1, 4);
+
+console.log( shape.position.x ); // 2
+console.log( shape.position.y ); // 5
+*/
+
+function Shape(x,y){
+    this.position= {x,y}
+}
+Shape.prototype.move = function(dx,dy){
+    this.position.x += dx;
+    this.position.y += dy;
+
+};
+const shape = new Shape(1,1);
+shape.move(1,4);
+console.log( shape.position.x ); // 2
+console.log( shape.position.y ); // 5
+
+
+module.exports = Shape;
+
+//Move Shape
+
+
+/*
+Task
+
+The Shape function will take two arguments: x and y. 
+Store these values in an object position on the instance (this).
+
+For reference see this example. The tests will invoke Shape
+with the new keyword, creating an object and setting it to 
+this within the function.
+
+The position should have keys x and y containing the 
+corresponding values:
+
+const shape = new Shape(5, 10);
+
+console.log(shape.position.x) // 5
+console.log(shape.position.y) // 10
+ Notice that position is an object with two keys x and y!
+*/
+
+// Our Shape "Constructor"
+function Shape(x, y) {
+    // store x and y in this.position
+    this.position = {
+        x : x,
+        y : y
+    }
+}
+/*const shape = new Shape(5, 10);
+console.log(shape.position.x); // 5
+console.log(shape.position.y); // 10*/
+
+/*
+Task
+Create a function move that will be added to the
+ Shape.prototype. This function should take two 
+ arguments: x and y.
+
+It should move the shape's position by adding the corresponding
+arguments value:
+
+const shape = new Shape(1, 1);
+
+shape.move(1, 4);
+
+console.log( shape.position.x ); // 2
+console.log( shape.position.y ); // 5
+*/
+
+function Shape(x,y){
+    this.position= {x,y}
+}
+Shape.prototype.move = function(dx,dy){
+    this.position.x += dx;
+    this.position.y += dy;
+
+};
+const shape = new Shape(1,1);
+shape.move(1,4);
+console.log( shape.position.x ); // 2
+console.log( shape.position.y ); // 5
+
+
+module.exports = Shape;
+
+//Circle Shape
+
+/*
+Your Goal: Complete the Circle Function
+In Circle.js, you'll need to do two things:
+
+Pass the arguments to Shape via call.
+ Notice we are binding Circle with this using call. This way when Shape is invoked, it will store x and y on the Circle instance!
+
+Store radius on our Circle instance. You can do this exactly how we stored position on the Shape class.
+The final result behavior should be:
+
+const circle = new Circle(5,10,15);
+
+console.log(circle.position.x); // 5
+console.log(circle.position.y); // 10
+console.log(circle.radius); // 15
+*/
+
+const Shape = require('./Shape');
+
+function Circle(x, y, radius) {
+    Shape.call(this,x, y);
+    // store radius on this
+    this.radius = radius;
+}
+
+module.exports = Circle;
+
+
+
