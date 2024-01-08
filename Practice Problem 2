@@ -1,12 +1,43 @@
+<<<<<<< HEAD
+//Shortest String
+//implement the shortestString function by comparing the lengths of str1 and str2.
+function shortestString(str1, str2) {
+    if(str1.length < str2.length){
+        return str1;
+    }else{
+        return str2;
+    }
+}
+module.exports = shortestString;
+=======
 // Shortest String
 /*
 Task
 Determine which of the two strings is shorter, return that string.
+>>>>>>> 024d119887f34f7930251f8616434de7d5e67c0c
 
+<<<<<<< HEAD
+//Half Value
+/*The function halfValue takes an array of numbers. It should return a 
+new array with all the original values halved.
+=======
 Tip
 to get shortest string you need to
 compare thelength of the given strings*/
+>>>>>>> 024d119887f34f7930251f8616434de7d5e67c0c
 
+<<<<<<< HEAD
+Odd numbers should be rounded up to the nearest whole number.
+
+Method
+To implement the halfValue function in JavaScript, you need to process
+ each number in the array, halve it, and round up if it's odd. The Math.
+ ceil function can be used to round up to the nearest whole number.
+
+
+*/
+
+=======
 function shortestString(str1, str2) {
     if(str1.length < str2.length){
         return str1;
@@ -301,3 +332,4 @@ function countElements(elements) {
 
    
   
+>>>>>>> 024d119887f34f7930251f8616434de7d5e67c0c
