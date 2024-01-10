@@ -298,10 +298,73 @@ module.exports = Celebrity;
 
 
 
+//Prototypes
 
 //Prototype Chain
 
-//Taking Shape
+/*
+JavaScript Prototypes
+
+JavaScript Prototypes are an important, albeit often misunderstood feature! 
+They can be quite helpful for making many instances of objects with linked,
+ re-usable functionality. They are quite often compared to classes in other 
+ object-oriented programming languages.
+
+Despite similarities to classes, prototypes are quite different! In some ways, 
+JavaScript seeks to make prototypes familiar with keywords like Class and new.
+ Looking closely, we'll see why this can be somewhat deceiving!
+
+ Prototype Chain
+Let's consider a simple example:
+
+function Animal(name) {
+    this.name = name;
+}
+
+const animal = new Animal("Bud");
+The animal here will already have some methods available: valueOf, hasOwnProperty, toString and more depending on your JavaScript environment. Where do these methods come from?
+
+They come from Object.prototype. This is the top of the prototype chain for every object in JavaScript.
+
+Note that these methods are not created anew for every object! They are actually the same methods:
+
+const animal = new Animal("Bud");
+const animal2 = new Animal("Lassie");
+
+console.log(animal.hasOwnProperty === animal2.hasOwnProperty); // true
+First, the JavaScript engine will look up to see if the animal instances have a method hasOwnProperty. Then it will look on the Animal.prototype. If not, it will continue to Object.prototype and find the method there.
+
+Since both animal and animal2 refer to the hasOwnProperty method on Object.prototype, the reference is equal and returns true above.
+
+Syntax Example
+Let's take a look at how prototypes are traditionally used:
+
+function Car(make, model) {
+    this.make = make;
+    this.model = model;
+}
+
+const car = new Car('Toyota', 'Camry');
+const car2 = new Car('Honda', 'Civic');
+
+console.log(car.make) // Toyota
+console.log(car2.model) // Civic
+Here Car is just a regular JavaScript function. Often it is referred to as a 
+constructor function, although it is not a 
+special function by any means! It is capitalized purely by convention. We 
+capitalize it to show we plan to use it with the new operator.
+
+Using the new operator we can create new instances of Car. The new operator will 
+create a new object and set it to this within the Car function in the example above. Implicitly, new will also return this object (if no other object is returned).
+
+ In This Keyword we went over rules for binding this. Using new is another rule 
+ for how it is bound. In this case, the new instance of the car is used for this 
+ in the constructor function.
+
+Both Car instances will have the properties make and model and will store them 
+from the arguments passed into the constructor call.
+
+*/
 
 /*
 Task
@@ -322,6 +385,8 @@ console.log(shape.position.x) // 5
 console.log(shape.position.y) // 10
  Notice that position is an object with two keys x and y!
 */
+
+//Taking Shape
 
 // Our Shape "Constructor"
 function Shape(x, y) {
@@ -331,65 +396,19 @@ function Shape(x, y) {
         y : y
     }
 }
-/*const shape = new Shape(5, 10);
+const shape = new Shape(5, 10);
 console.log(shape.position.x); // 5
-console.log(shape.position.y); // 10*/
-
-/*
-Task
-Create a function move that will be added to the
- Shape.prototype. This function should take two 
- arguments: x and y.
-
-It should move the shape's position by adding the corresponding
-arguments value:
-
-const shape = new Shape(1, 1);
-
-shape.move(1, 4);
-
-console.log( shape.position.x ); // 2
-console.log( shape.position.y ); // 5
-*/
-
-function Shape(x,y){
-    this.position= {x,y}
-}
-Shape.prototype.move = function(dx,dy){
-    this.position.x += dx;
-    this.position.y += dy;
-
-};
-const shape = new Shape(1,1);
-shape.move(1,4);
-console.log( shape.position.x ); // 2
-console.log( shape.position.y ); // 5
-
+console.log(shape.position.y); // 10
 
 module.exports = Shape;
 
-//Move Shape
 
+//Move Shape
 
 /*
 Task
 
-The Shape function will take two arguments: x and y. 
-Store these values in an object position on the instance (this).
 
-For reference see this example. The tests will invoke Shape
-with the new keyword, creating an object and setting it to 
-this within the function.
-
-The position should have keys x and y containing the 
-corresponding values:
-
-const shape = new Shape(5, 10);
-
-console.log(shape.position.x) // 5
-console.log(shape.position.y) // 10
- Notice that position is an object with two keys x and y!
-*/
 
 // Our Shape "Constructor"
 function Shape(x, y) {
@@ -438,32 +457,6 @@ module.exports = Shape;
 
 //Circle Shape
 
-/*
-Your Goal: Complete the Circle Function
-In Circle.js, you'll need to do two things:
-
-Pass the arguments to Shape via call.
- Notice we are binding Circle with this using call. This way when Shape is invoked, it will store x and y on the Circle instance!
-
-Store radius on our Circle instance. You can do this exactly how we stored position on the Shape class.
-The final result behavior should be:
-
-const circle = new Circle(5,10,15);
-
-console.log(circle.position.x); // 5
-console.log(circle.position.y); // 10
-console.log(circle.radius); // 15
-*/
-
-const Shape = require('./Shape');
-
-function Circle(x, y, radius) {
-    Shape.call(this,x, y);
-    // store radius on this
-    this.radius = radius;
-}
-
-module.exports = Circle;
 
 
 
