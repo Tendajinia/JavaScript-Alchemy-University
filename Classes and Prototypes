@@ -587,6 +587,32 @@ Rectangle.prototype = Object.create(Shape.prototype)
 
 module.exports = Rectangle;
 
+//Classes
+
+/*
+
+Hero
+
+Within your constructor function, add a health property to a hero instance and set it to 50.
+
+When creating a new hero, it should work like this:
+
+const hero = new Hero();
+
+console.log(hero.health); // 50
+*/
+
+class Hero {
+    constructor() {
+        this.health = 50;
+        
+    }
+}
+const hero = new Hero();
+console.log(hero.health); // 50
+
+module.exports = Hero;
+
 
 
 
