@@ -7,6 +7,8 @@ Task
 Let's complete the isEqual function!
 If a is equal to b return true.
 */
+
+//Solution
 function isEqual(a, b) {
     if(a===b);
     return true;    
@@ -65,6 +67,8 @@ Let's update our isNotEqual function to also handle the case where a is equal to
 
 If a is not equal to b return true. Otherwise, return false.
 */
+
+//Solution
 function isNotEqual(a, b) {
     if(a!==b){
         return true;
@@ -85,6 +89,8 @@ If first is greater than last, return first!
 If last is greater than first, return last!
 If they are equal, do not return anything.
 */
+
+//Solution
 function greater(first, last) {
     if(first > last){
         return first;
@@ -152,6 +158,8 @@ We have a function isEnough that has two parameters: cost and money.
 Your goal is to determine if the money is enough to cover the cost. The money should be at least as great as the cost. If it's greater, no problem! Either way, return true.
 If the money isn't enough, return false.
 */
+
+//Solution
 function isEnough(cost, money) {
     if(cost<=money) {
       return true;
@@ -171,6 +179,8 @@ subscription to access content. We want to encourage users to try it out so we a
 Let's update the canAccess function to allow access if the user has either a subscription or a free trial.
 If either purchasedSubscription or freeTrial are true, return true. Otherwise return false.
 */
+
+//Solution
 function canAccess(purchasedSubscription, freeTrial) {
     if(purchasedSubscription){
         return true;
