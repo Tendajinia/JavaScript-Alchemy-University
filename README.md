@@ -6,4 +6,4 @@ JavaScript Course Solutions from Alchemy University
 3.Networks
   -Local development 
   -Asynchronous JavaScript
-  -Building a server
+  -Building a server.
