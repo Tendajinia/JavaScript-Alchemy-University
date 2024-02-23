@@ -1,4 +1,6 @@
 JavaScript Course Solutions from Alchemy University
+
+
 1.JavaScript Basics
 What are Programs?
 Intro to JavaScript
@@ -45,6 +47,16 @@ c. Practice Problems
  
 
 3.Networks
-  -Local development 
-  -Asynchronous JavaScript
-  -Building a server.
+  a.Local development 
+  Setup Node.js
+  Node Package Manager
+    
+  b.Asynchronous JavaScript
+  Callback Functions
+  Introduction to Promises
+  Pact: A Promise Library  
+  
+  c.Building a server.
+  Running a Node Server
+  An HTML Node Server
+
