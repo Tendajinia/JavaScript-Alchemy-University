@@ -77,10 +77,16 @@ then it is added to the new array. If not, then it is ignored.
 */
 
 function unique(array) {
-    return array.filter((value, index, self) => {
-        return self.indexOf(value) === index;
-    });
+    const uniqueArray = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if (!uniqueArray.includes(element)) {
+            uniqueArray.push(element);
+        }
+    }
+    return uniqueArray;
 }
+module.exports = unique;
 
 /*
 const array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6];
