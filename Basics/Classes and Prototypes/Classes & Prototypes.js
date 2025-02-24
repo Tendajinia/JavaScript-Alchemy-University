@@ -696,17 +696,21 @@ No need to add anything to Warrior just yet, simply extend the class for now!
 */
 
 const Hero = require('./Hero');
+
 class Warrior extends Hero {
-    constructor(health) {
-        super(health);
-       // this.rage = 0;
-    }
-    /*takeDamage(damage) {
-        super.takeDamage(damage);
-        this.rage += 1;*/
+    constructor() {
+        super(); // Calls Hero constructor, which sets health to 50
+        this.rage = 0; // Initialize rage at 0
     }
 
+    takeDamage(damage) {
+        super.takeDamage(damage); // Calls Hero's takeDamage method
+        this.rage += 1; // Increases rage when taking damage
+    }
+}
+
 module.exports = Warrior;
+
 
 
 //Super Warrior
@@ -843,17 +847,21 @@ console.log(warrior.health, warrior.rage); // 40, 1
 Be sure to pass the damage argument into the super.takeDamage call!
 */
 const Hero = require('./Hero');
+
 class Warrior extends Hero {
-    constructor(health) {
-        super(health);
-       // this.rage = 0;
-    }
-    /*takeDamage(damage) {
-        super.takeDamage(damage);
-        this.rage += 1;*/
+    constructor() {
+        super(); // Calls the Hero constructor to initialize health
+        this.rage = 0; // Initialize rage at 0
     }
 
+    takeDamage(damage) {
+        super.takeDamage(damage); // Calls Hero's takeDamage method to reduce health
+        this.rage += 1; // Increases rage by 1
+    }
+}
+
 module.exports = Warrior;
+
 
 //Passing Health
 
@@ -877,19 +885,38 @@ Arguments that are passed when calling a class with new will be passed directly
 
 You'll need to change the constructor of both the Hero and Warrior for this one!*/
 
+//Hero.js//
+class Hero {
+    constructor(health) {
+        this.health = health; // Assign the passed health value
+    }
+
+    takeDamage(damage) {
+        this.health -= damage; // Reduce health by damage amount
+    }
+}
+
+module.exports = Hero;
+
+
+//Warrior.js//
 
 const Hero = require('./Hero');
+
 class Warrior extends Hero {
     constructor(health) {
-        super(health);
-       // this.rage = 0;
-    }
-    /*takeDamage(damage) {
-        super.takeDamage(damage);
-        this.rage += 1;*/
+        super(health); // Pass health to the Hero constructor
+        this.rage = 0; // Initialize rage
     }
 
+    takeDamage(damage) {
+        super.takeDamage(damage); // Call Hero's takeDamage method
+        this.rage += 1; // Increase rage
+    }
+}
+
 module.exports = Warrior;
+
 
 
 
